@@ -48,7 +48,7 @@ http://<IP_de_ton_PC>:5000
 
     Remplace <IP_de_ton_PC> par l'adresse locale de ta machine (ex : 192.168.43.10)
 
-    ---
+---
 
 🎯 Fonctionnalités
 
@@ -60,7 +60,7 @@ http://<IP_de_ton_PC>:5000
 
     Synchronisation avec YouTube sur le PC via des raccourcis clavier simulés
 
-    ---
+---
 
 🛠️ Détails techniques
 
@@ -70,7 +70,7 @@ http://<IP_de_ton_PC>:5000
 
     HTML/CSS simple et responsive pour l’interface utilisateur
 
-    ---
+---
 
 ⚠️ Remarques importantes
 
