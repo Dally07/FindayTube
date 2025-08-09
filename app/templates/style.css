@@ -1,0 +1,24 @@
+ body { 
+    text-align: center; 
+    font-family: sans-serif; 
+    background: #111; 
+    color: white; 
+}
+ button, input { 
+    padding: 15px;
+     margin: 10px; 
+     font-size: 18px; 
+     border-radius: 8px; 
+     border: none; }
+        
+button { 
+        background: #ff0000; 
+        color: white; 
+    }
+input { 
+    width: 80%; 
+}
+.search-row{
+    display:flex;
+    gap:8px
+}

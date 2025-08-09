@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>YT Remote</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            text-align: center;
+            font-family: sans-serif;
+            background: #111;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            max-width: 500px;
+            margin: 0 auto 20px auto;
+        }
+
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 8px 0 0 8px;
+            border: none;
+            outline: none;
+            min-width: 0; /* important pour flex-grow */
+        }
+
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            border-radius: 0 8px 8px 0;
+            border: none;
+            background: #ff0000;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            min-width: 100px;
+        }
+
+        button:hover {
+            background: #e60000;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .controls button {
+            flex-grow: 1;
+            min-width: 0;
+            border-radius: 8px;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        /* Mobile : forcer même ligne, réduire la taille min des boutons */
+        @media (max-width: 480px) {
+            form, .controls {
+                gap: 6px;
+                max-width: 100%;
+                padding: 0 10px;
+            }
+
+            button {
+                padding: 12px 15px;
+                font-size: 16px;
+                min-width: 80px;
+            }
+
+            input[type="text"] {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            iframe {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📺 YouTube Remote</h1>
+
+    <form action="/search" method="post" autocomplete="off">
+        <input type="text" name="query" placeholder="Rechercher sur YouTube" required>
+        <button type="submit">🔍</button>
+    </form>
+
+    {% if video_url %}
+    <p>Résultat de recherche :</p>
+    <iframe
+        src="{{ video_url }}"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer"
+    ></iframe>
+    {% endif %}
+
+    <div class="controls">
+        <button onclick="fetch('/prev')">⏮</button>
+        <button onclick="fetch('/playpause')">▶️</button>
+        <button onclick="fetch('/next')">⏭</button>
+    </div>
+</body>
+</html>
