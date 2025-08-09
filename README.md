@@ -10,7 +10,7 @@ Elle offre des fonctionnalités simples et pratiques : recherche de vidéos, lec
 1. **Cloner le dépôt**
 
 ```bash
-git clone https://github.com/toncompte/FindayTube.git
+git clone https://github.com/Dally07/FindayTube.gitg
 cd FindayTube
 ```
 
